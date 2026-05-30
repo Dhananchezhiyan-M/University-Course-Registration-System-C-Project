@@ -1,0 +1,2 @@
+Psychology,Faculty 1: Dr. John Doe, 10 years of experience, Alumni rating: 4.5,Faculty 2: Prof. Jane Smith, 8 years of experience, Alumni rating: 4.8,
+Film Appreciation,Faculty 1: Dr. Michael Johnson, 12 years of experience, Alumni rating: 4.9,Faculty 2: Prof. Emily Brown, 9 years of experience, Alumni rating: 4.7,

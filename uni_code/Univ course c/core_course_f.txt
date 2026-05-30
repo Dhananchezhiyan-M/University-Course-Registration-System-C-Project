@@ -1,0 +1,41 @@
+$ns [new simulator]
+
+set tracefile [open output.tr w]
+$ns trace-all $tracefile
+set namfile [open output.nam w]
+$ns namtrace-all $namfile
+
+$ns color 1 Blue
+$ns color 2 Red
+
+set n0 [$ns node]
+
+$ns duplex-link $n0 $n1 1Mb 10ms DropTail
+$ns duplex-link $n2 $n3 1Mb 10ms DropTail
+
+set udp0 [new Agent/UDP]
+set null0 [new Agent/Null]
+$ns attach-agent 
+$ns attach agent
+$ns connect $udp0 $dnull0
+$udp0 set fid_ 1    ;
+
+set tcp0 [new Agent/TCP/Reno]
+set sink0 [new Agent/TCPSink]
+$ns 
+$ns
+$ns connect $n1 $tcp0
+$udp0 set fid_ 1    ;
+
+proc finish{} {
+	global set tracefile namfile
+	$ns trace-flush
+	close $tracefile
+	close $namfile
+	exec nam output.nam &
+	exit 0
+}
+
+$ns at 5.0 "finish"
+
+$ns run
